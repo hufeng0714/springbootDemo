@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  
 
 		/**
-		 * 
 		 创建 Application.java，其注解 @SpringBootApplication 
 		 表示这是一个SpringBoot应用，运行其主方法就会启动tomcat,默认端口是8080
 		 */
