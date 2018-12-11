@@ -11,14 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		这时返回"hello"就不再是字符串，而是根据application.properties 中的视图重定向，到/WEB-INF/jsp目录下去寻找hello.jsp文件
 		 */
 
+//修改HelloController，使得访问/hello一定会产生异常: some exception
 //http://127.0.0.1:8080/hello
 
 @Controller
 public class HelloController {
   
-    @RequestMapping("/hello1")
-    public String hello(Model m) {
+    @RequestMapping("/hello")
+    public String hello(Model m) throws Exception {
         m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
+        if(true){
+            throw new Exception("some exception");
+        }
         return "hello";
     }
 }
